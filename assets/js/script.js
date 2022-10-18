@@ -9,11 +9,13 @@ const userScore = document.getElementById('user-score');
 const questionText = document.getElementById('question-text');
 
 let currentQuestion = 0;
-let score = 0;
+var score = 0;
+
 
 let questions = [
     {
-        question: "Are you cool ?",
+        image: `assets/images/question1.jpg`,
+        question: "Who is this character ?",
         answers: [
             { option: "Yes", answer: true },
             { option: "No", answer: false }
@@ -26,7 +28,16 @@ let questions = [
             { option: "No", answer: false }
         ]
 
+    },
+    {
+        question: "Are you sure you are cool ?",
+        answers: [
+            { option: "Yes", answer: true },
+            { option: "No", answer: false }
+        ]
+
     }
+
 
 ]
 
@@ -34,11 +45,13 @@ restartBtn.addEventListener('click', restart);
 prevBtn.addEventListener('click', prev);
 nextBtn.addEventListener('click', next);
 submitBtn.addEventListener('click', submit);
-
+// get executed when the page loads and the script gets executed
 function beginQuiz() {
     currentQuestion = 0;
     questionText.innerHTML = questions[currentQuestion].question;
+    image.innerHTML = questions[currentQuestion].image;
     trueBtn.innerHTML = questions[currentQuestion].answers[0].option;
+
     trueBtn.onclick = () => {
         let ano = 0;
         if (questions[currentQuestion].answers[ano].answer) {
