@@ -10,11 +10,11 @@ const questionText = document.getElementById('question-text');
 
 let currentQuestion = 0;
 var score = 0;
-
+restart
 
 let questions = [
     {
-        image: `assets/images/question1.jpg`,
+        img: "https://static.wikia.nocookie.net/heroes-and-villain/images/3/3d/Coulsons2image.jpg/revision/latest?cb=20190207193651",
         question: "Who is this character ?",
         answers: [
             { option: "Yes", answer: true },
@@ -49,9 +49,10 @@ submitBtn.addEventListener('click', submit);
 function beginQuiz() {
     currentQuestion = 0;
     questionText.innerHTML = questions[currentQuestion].question;
-    image.innerHTML = questions[currentQuestion].image;
+    image.innerHTML = questions[currentQuestion].img;
     trueBtn.innerHTML = questions[currentQuestion].answers[0].option;
 
+    image.innerHTML += "<img src=\"" + img + "\" width=\"200\" height=\"200\"><br>";
     trueBtn.onclick = () => {
         let ano = 0;
         if (questions[currentQuestion].answers[ano].answer) {
