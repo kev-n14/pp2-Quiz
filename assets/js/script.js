@@ -14,7 +14,7 @@ restart
 
 let questions = [
     {
-        img: "https://static.wikia.nocookie.net/heroes-and-villain/images/3/3d/Coulsons2image.jpg/revision/latest?cb=20190207193651",
+        img: "../images/question1.jpg",
         question: "Who is this character ?",
         answers: [
             { option: "Yes", answer: true },

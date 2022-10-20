@@ -177,6 +177,13 @@ img {
     display: none;
 }
 
+.questionImg {
+
+    width: 700px;
+    height: 350px;
+    padding: 10px;
+}
+
 /* End of main section */
 
 /* Footer */
