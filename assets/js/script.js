@@ -7,7 +7,7 @@ const trueBtn = document.getElementById('True');
 const falseBtn = document.getElementById('False');
 const userScore = document.getElementById('user-score');
 const questionText = document.getElementById('question-text');
-
+const image = document.getElementById('image');
 let currentQuestion = 0;
 var score = 0;
 restart
@@ -52,7 +52,7 @@ function beginQuiz() {
     image.innerHTML = questions[currentQuestion].img;
     trueBtn.innerHTML = questions[currentQuestion].answers[0].option;
 
-    image.innerHTML += "<img src=\"" + img + "\" width=\"200\" height=\"200\"><br>";
+    questions.innerHTML += "<img src=\"" + img + "\" width=\"200\" height=\"200\"><br>";
     trueBtn.onclick = () => {
         let ano = 0;
         if (questions[currentQuestion].answers[ano].answer) {
