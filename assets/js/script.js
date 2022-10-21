@@ -1,132 +1,166 @@
-// create variables that will represent elements in our documentused to access elements via the DOM 
+// create variables that will represent elements in document to access elements via the DOM 
 const restartBtn = document.getElementById('restart');
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
-const submitBtn = document.getElementById('submit');
+const finishBtn = document.getElementById('finish');
 const trueBtn = document.getElementById('True');
 const falseBtn = document.getElementById('False');
 const userScore = document.getElementById('user-score');
 const questionText = document.getElementById('question-text');
+const currentQuest = document.getElementById('currentQ');
 const image = document.getElementById('image');
-let currentQuestion = 0;
-var score = 0;
-restart
 
+let currentQ = 0; // for current question
+var score = 0; // for score
+
+// create an array called questions
+//contain the image,question, answers and options
 let questions = [
     {
-        img: "../images/question1.jpg",
-        question: "Who is this character ?",
+
+        question: "Welcome click next to begin",
+
+    },
+    {
+        img: "assets/images/question1",
+        question: "True or False, There are 6 infinity stones ?",
         answers: [
-            { option: "Yes", answer: true },
-            { option: "No", answer: false }
+            { option: "True", answer: true },
+            { option: "False", answer: false },
         ]
     },
     {
-        question: "Are you sure you are cool ?",
+        question: "True or False, soul stone is located on Vormir?",
         answers: [
-            { option: "Yes", answer: true },
-            { option: "No", answer: false }
+            { option: "True", answer: true },
+            { option: "False", answer: false }
         ]
 
     },
     {
-        question: "Are you sure you are cool ?",
+        question: "True or False, Tom Cruise voices the character Rocket the raccon?",
         answers: [
-            { option: "Yes", answer: true },
-            { option: "No", answer: false }
+            { option: "True", answer: false },
+            { option: "False", answer: true }
+        ]
+
+    }
+    ,
+    {
+        question: "True or False, Captain America's shield and Bucky's arm are made of iron?",
+        answers: [
+            { option: "True", answer: false },
+            { option: "False", answer: true }
+        ]
+
+    }
+    ,
+    {
+        question: "True or False, Captain America was able to pick up Thor's hammer in Endgame??",
+        answers: [
+            { option: "True", answer: true },
+            { option: "False", answer: false }
         ]
 
     }
 
 
 ]
-
+// onclick events to call functions
+//used addEventListener instead of onClick
 restartBtn.addEventListener('click', restart);
 prevBtn.addEventListener('click', prev);
 nextBtn.addEventListener('click', next);
-submitBtn.addEventListener('click', submit);
+finishBtn.addEventListener('click', submit);
 // get executed when the page loads and the script gets executed
-function beginQuiz() {
-    currentQuestion = 0;
-    questionText.innerHTML = questions[currentQuestion].question;
-    image.innerHTML = questions[currentQuestion].img;
-    trueBtn.innerHTML = questions[currentQuestion].answers[0].option;
+function startQuiz() {
 
-    questions.innerHTML += "<img src=\"" + img + "\" width=\"200\" height=\"200\"><br>";
+    currentQ = 0;
+    questionText.innerHTML = questions[currentQ].question;
+    trueBtn.innerHTML = questions[currentQ].answers[0].option;
+    img = questions[currentQ].img;
+
+    image.innerHTML += "<img src=\"" + img + "\" width=\"200\" height=\"200\"><br>";
+    // questions.innerHTML += "<img src=\"" + img + "\" width=\"200\" height=\"200\"><br>";
     trueBtn.onclick = () => {
-        let ano = 0;
-        if (questions[currentQuestion].answers[ano].answer) {
-            if (score < 3) {
+        let num = 0;
+        if (questions[currentQ].answers[num].answer) {
+            if (score < 5) {
                 score++;
             }
         }
         userScore.innerHTML = score;
-        if (currentQuestion < 2) {
+        if (currentQ < 5) {
             next();
         }
     }
-    falseBtn.innerHTML = questions[currentQuestion].answers[1].option;
+    falseBtn.innerHTML = questions[currentQ].answers[1].option;
     falseBtn.onclick = () => {
-        let ano = 1;
-        if (questions[currentQuestion].answers[ano].answer) {
-            if (score < 3) {
+        let num = 1;
+        if (questions[currentQ].answers[num].answer) {
+            if (score < 5) {
                 score++;
             }
         }
         userScore.innerHTML = score;
-        if (currentQuestion < 2) {
+        if (currentQ < 5) {
             next();
         }
     }
     prevBtn.classList.add('hide');
 
 }
-beginQuiz();
+startQuiz();
 
+//reset the cuurent question, score,remove the hide class if it's assigned to an element.
+// calls startQuiz() function
 function restart() {
 
-    currentQuestion = 0;
+    currentQ = 0;
+    currentQuest.innerHTML = currentQ;
     prevBtn.classList.remove('hide');
     nextBtn.classList.remove('hide');
-    submitBtn.classList.remove('hide');
+    finishBtn.classList.remove('hide');
     trueBtn.classList.remove('hide');
     falseBtn.classList.remove('hide');
     score = 0;
     userScore.innerHTML = score;
-    beginQuiz();
+    startQuiz();
 
 }
-
+// increment currentQ
 function next() {
-    currentQuestion++;
-    if (currentQuestion >= 2) {
+
+    currentQuest.innerHTML = currentQ++;
+
+    if (currentQ >= 6) {
         nextBtn.classList.add('hide');
         prevBtn.classList.remove('hide');
     }
-    questionText.innerHTML = questions[currentQuestion].question;
-    trueBtn.innerHTML = questions[currentQuestion].answers[0].option;
+    questionText.innerHTML = questions[currentQ].question;
+    trueBtn.innerHTML = questions[currentQ].answers[0].option;
     trueBtn.onclick = () => {
-        let ano = 0;
-        if (questions[currentQuestion].answers[ano].answer) {
-            if (score < 3) {
+        let num = 0;
+        if (questions[currentQ].answers[num].answer) {
+            if (score < 5) {
                 score++;
             }
         }
         userScore.innerHTML = score;
-        if (currentQuestion < 2) {
+        if (currentQ < 5) {
             next();
         }
     }
-    falseBtn.innerHTML = questions[currentQuestion].answers[1].option;
+    falseBtn.innerHTML = questions[currentQ].answers[1].option;
     falseBtn.onclick = () => {
-        let ano = 1;
-        if (questions[currentQuestion].answers[ano].answer) {
-            if (score < 3) {
+        let num = 1;
+        if (questions[currentQ].answers[num].answer) {
+            if (score < 5) {
                 score++;
             }
         }
         userScore.innerHTML = score;
-        if (currentQuestion < 2) {
+        if (currentQ < 5) {
             next();
         }
     }
@@ -134,35 +168,35 @@ function next() {
 }
 
 function prev() {
-    currentQuestion--;
-    if (currentQuestion <= 0) {
+    currentQuest.innerHTML = --currentQ;
+    if (currentQ <= 0) {
         prevBtn.classList.add('hide');
         nextBtn.classList.remove('hide');
     }
-    questionText.innerHTML = questions[currentQuestion].question;
-    trueBtn.innerHTML = questions[currentQuestion].answers[0].option;
+    questionText.innerHTML = questions[currentQ].question;
+    trueBtn.innerHTML = questions[currentQ].answers[0].option;
     trueBtn.onclick = () => {
-        let ano = 0;
-        if (questions[currentQuestion].answers[ano].answer) {
-            if (score < 3) {
+        let num = 0;
+        if (questions[currentQ].answers[num].answer) {
+            if (score < 5) {
                 score++;
             }
         }
         userScore.innerHTML = score;
-        if (currentQuestion < 2) {
+        if (currentQ < 5) {
             next();
         }
     }
-    falseBtn.innerHTML = questions[currentQuestion].answers[1].option;
+    falseBtn.innerHTML = questions[currentQ].answers[1].option;
     falseBtn.onclick = () => {
-        let ano = 1;
-        if (questions[currentQuestion].answers[ano].answer) {
-            if (score < 3) {
+        let num = 1;
+        if (questions[currentQ].answers[num].answer) {
+            if (score < 5) {
                 score++;
             }
         }
         userScore.innerHTML = score;
-        if (currentQuestion < 2) {
+        if (currentQ < 2) {
             next();
         }
     }
@@ -173,9 +207,18 @@ function submit() {
 
     prevBtn.classList.add('hide');
     nextBtn.classList.add('hide');
-    submitBtn.classList.add('hide');
+    finishBtn.classList.add('hide');
     trueBtn.classList.add('hide');
     falseBtn.classList.add('hide');
-    questionText.innerHTML = "Congratulations"
+
+    if (score == 5) {
+        questionText.innerHTML = `Congratulations You scored ${score}/5. You know your marvel movies`;
+    }
+    else if (score < 5 && score >= 3) {
+        questionText.innerHTML = `You scored ${score}/5 .Not bad`;
+    }
+    else if (score < 3 && score >= 0) {
+        questionText.innerHTML = `You scored ${score}/5 .Watch the movies again`;
+    }
 
 }

@@ -1,5 +1,4 @@
 # pp2-Quiz
-# pp1-miracle-of-the-sun
 
 ![Display on differnt screens]()
 
@@ -11,25 +10,8 @@
 ### **Navigation Bar**
 
 
-### **The Banner section**
-
-
-### **Main Content Section**
-
-
-
-### **Eyewitness section**
-
-
-### **Video section** 
-
 
 ### **Footer**
-
-### **Gallery**
-
-
-### **The Sign Up Page**
 
 ### **Features Left to Implement**
 
@@ -121,8 +103,7 @@ No errors were found when passing through the official [(Jigsaw) validator]()
 ## Performance
 ---
 ### **Lighthouse Test**
-* Home Page
-![Home Page]()
+
 
 ## Deployment
 ---
@@ -142,7 +123,7 @@ By forking the GitHub Repository we make a copy of the original repository on ou
 
 1. Log in to GitHub and locate the GitHub Repository
 1. At the top of the Repository (not the top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
-![fork section ]()
+
 1. You should now have a copy of the original repository in your GitHub account.
 ### **Making a Local Clone**
 1. Log in to GitHub and locate the GitHub Repository

@@ -16,7 +16,7 @@
         <nav>
             <div class="title nav-bar">
                 <a href="index.html">
-                    <h1>Quizzers Assemble</h1>
+                    <!-- <h1>Quizzers Assemble</h1> -->
                 </a>
             </div>
             <div class="logo nav-bar">
@@ -29,22 +29,29 @@
 
     </header>
     <div class="container">
+
+        <div class="question-text">
+            <h3>Question Number:</h3>
+            <span id="currentQ">0</span>
+            <span id="total-questions">/ 5</span>
+        </div>
         <div class="score">
+            <h3>Your Score:</h3>
             <span id="user-score">0</span>
-            <span id="total-score">/ 3</span>
+            <span id="total-score">/ 5</span>
         </div>
 
 
 
 
         <div class="content" id="question-area">
-            <div id="image">
-                <img src="" alt="" class="questionImg">
-                <div id="question-text"></div>
-            </div>
+            <div id="image"></div>
+
+            <div id="question-text"></div>
+
             <div class="options">
-                <button class="btn btn-option" id="True">True</button>
-                <button class="btn btn-option" id="False">False</button>
+                <button class="btn btn-option" id="True"></button>
+                <button class="btn btn-option" id="False"></button>
 
             </div>
         </div>
@@ -53,9 +60,12 @@
             <button class="btn btn-restart" id="restart">Restart</button>
             <button class="btn btn-prev" id="prev">Prev</button>
             <button class="btn btn-next" id="next">Next</button>
-            <button class="btn btn-submit" id="submit">Submit</button>
+            <button class="btn btn-finish" id="finish">Finish</button>
         </div>
+
+
     </div>
+
     <footer>
         <div class="footer-content">
 
@@ -82,7 +92,7 @@
     </footer>
 
     <!--- icon set -->
-    <script src="https://kit.fontawesome.com/43ecf20a8b.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/43ecf20a8b.js" crossorigin="numnymous"></script>
     <script src="assets/js/script.js"></script>
 </body>
 

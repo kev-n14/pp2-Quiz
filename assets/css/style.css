@@ -12,7 +12,6 @@ body {
     background-color: #bfc1c2;
     display: flex;
     flex-direction: column;
-
     background: url("../images/background-image.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -29,17 +28,12 @@ header {
     width: 100%;
     height: 10vh;
     opacity: 90%;
-
-
     z-index: 1;
 }
 
 nav {
     height: 10vh;
     display: flex;
-
-
-
 }
 
 .nav-bar {
@@ -68,20 +62,14 @@ nav {
     text-decoration: none;
     color: white;
     font-family: 'PT Serif', serif;
-
 }
 
 
 
 .logo {
     padding: 5px;
-
-    margin-right: 20px;
-
-    height: 100%;
+    height: 110%;
     width: auto;
-
-
 }
 
 img {
@@ -107,7 +95,7 @@ img {
     max-width: 90%;
     width: 90%;
     padding: 0px 10px;
-    background-color: beige;
+    background-color: #fbeec1;
     height: 50vh;
     box-shadow: 0 0 5px 4px;
     display: flex;
@@ -116,56 +104,59 @@ img {
     align-items: center;
     border-radius: 8px;
     text-align: center;
-
     margin: auto;
     margin-top: 80px;
 }
 
-.score {
-
+.score,
+.question-text {
     font-size: large;
     font-weight: bold;
+    padding-top: 10px;
 
 }
 
-#user-score {
-    color: #ef9614;
-
+#user-score,
+#currentQ {
+    color: #DB2727;
 }
 
-#total-score {
-    color: #f6490f;
+#total-score,
+#total-questions {
+    color: #2F648E;
 }
+
+
 
 .content {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 20px;
 }
 
 .btn {
     font-size: large;
     font-weight: bold;
     box-shadow: 0 6px 12px -2px rgba(#f27813, .15);
-    background: #ef9614;
+    background: #2F648E;
     border-radius: 4px;
     padding: 8px;
     color: beige;
     margin: 6px;
     cursor: pointer;
-
 }
 
 .btn:hover {
     color: black;
+    background: #64B9E0;
     padding: 15px;
 }
 
 .options {
     padding: 10px;
     order: 3;
-
 }
 
 .controls {
@@ -178,7 +169,6 @@ img {
 }
 
 .questionImg {
-
     width: 700px;
     height: 350px;
     padding: 10px;
@@ -189,7 +179,6 @@ img {
 /* Footer */
 footer {
     background-color: #3a3a3a;
-
     opacity: 90%;
     color: #fff;
     position: absolute;
@@ -205,8 +194,6 @@ footer {
     flex-direction: column;
     text-align: center;
     max-height: 10%;
-
-
 }
 
 
@@ -219,7 +206,6 @@ footer {
     justify-content: center;
     padding: 5px;
     margin: 2px;
-
 }
 
 .socials li {
