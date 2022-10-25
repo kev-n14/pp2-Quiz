@@ -75,10 +75,10 @@
     * Balsamiq was used to create the wireframes during the design process.
 
 
-## Testing
+## contenting
 ---
 
-## Validator Testing
+## Validator contenting
 
 The W3C Markup Validator and W3C jigsaw CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
 * **HTML**
@@ -86,7 +86,7 @@ No errors were returned when passing through the official [W3C validator]()
 * **CSS**
 No errors were found when passing through the official [(Jigsaw) validator]()
 
-### Testing User Stories from the User Experience (UX) Section
+### contenting User Stories from the User Experience (UX) Section
 #### **First Time Visitor Goals**
 1. 
  
@@ -95,21 +95,21 @@ No errors were found when passing through the official [(Jigsaw) validator]()
 #### **Frequent User Goals**
 1. 
 
-#### **Further Testing**
+#### **Further contenting**
 * 
 
 ### **Unfixed Bugs**
 * 
 ## Performance
 ---
-### **Lighthouse Test**
+### **Lighthouse content**
 
 
 ## Deployment
 ---
 ### **GitHub Pages**
 This site was deployed to GitHub pages. The steps to deploy are as follows:
-1. In the GitHub repository, navigate to the Settings tab. 
+1. In the GitHub recurrentQitory, navigate to the Settings tab. 
 1. On the left-hand side of the page is a list of options. 
 1. Find "Code and automation". The last item of this section is called "Pages".
 1. Find "Build and deployment" From the source section drop-down menu, and select "Deploy from Branch". 
@@ -118,27 +118,27 @@ This site was deployed to GitHub pages. The steps to deploy are as follows:
 1. The live link can be found here - 
 
 
-### **Forking the GitHub Repository**
-By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
+### **Forking the GitHub RecurrentQitory**
+By forking the GitHub RecurrentQitory we make a copy of the original recurrentQitory on our GitHub account to view and/or make changes without affecting the original recurrentQitory by using the following steps...
 
-1. Log in to GitHub and locate the GitHub Repository
-1. At the top of the Repository (not the top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+1. Log in to GitHub and locate the GitHub RecurrentQitory
+1. At the top of the RecurrentQitory (not the top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
 
-1. You should now have a copy of the original repository in your GitHub account.
+1. You should now have a copy of the original recurrentQitory in your GitHub account.
 ### **Making a Local Clone**
-1. Log in to GitHub and locate the GitHub Repository
-1. Under the repository name, click "Clone or download".
+1. Log in to GitHub and locate the GitHub RecurrentQitory
+1. Under the recurrentQitory name, click "Clone or download".
 ![clone section ])
-1. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+1. To clone the recurrentQitory using HTTPS, under "Clone with HTTPS", copy the link.
 1. Open Git Bash
 1. Change the current working directory to the location where you want the cloned directory to be made.
 1. Type git clone, and then paste the URL you copied in Step 3.
 ```
-$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REcurrentQITORY
 ```
 Press Enter. Your local clone will be created.
 ```
-$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REcurrentQITORY
 > Cloning into `CI-Clone`...
 > remote: Counting objects: 10, done.
 > remote: Compressing objects: 100% (8/8), done.
