@@ -110,7 +110,7 @@ function startQuiz() {
     questionText.innerHTML = ques(questions[currentQ].question);
     trueButton.innerHTML = questions[currentQ].answers[0].option;
     falseButton.innerHTML = questions[currentQ].answers[1].option;
-   
+
     previousButton.classList.add('hide');
 }
 
