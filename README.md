@@ -124,7 +124,7 @@ No errors were found when passing through the official [(Jigsaw) validator](http
 ---
 ### **Lighthouse content**
 * Home Page
-![Home Page](/assets/images/read-me/)
+![Home Page](/assets/images/read-me/pp2quiz-lighthouse.png)
 ## Deployment
 ---
 ### **GitHub Pages**
@@ -143,12 +143,12 @@ By forking the GitHub RecurrentQitory we make a copy of the original recurrentQi
 
 1. Log in to GitHub and locate the GitHub RecurrentQitory
 1. At the top of the RecurrentQitory (not the top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
-
+![fork section ](/assets/images/read-me/forking.png)
 1. You should now have a copy of the original recurrentQitory in your GitHub account.
 ### **Making a Local Clone**
 1. Log in to GitHub and locate the GitHub RecurrentQitory
 1. Under the recurrentQitory name, click "Clone or download".
-![clone section ])
+![fork section ](/assets/images/read-me/cloning.png)
 1. To clone the recurrentQitory using HTTPS, under "Clone with HTTPS", copy the link.
 1. Open Git Bash
 1. Change the current working directory to the location where you want the cloned directory to be made.
@@ -168,12 +168,10 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REcurrentQITORY
 
 ## Credits
 ---
-
-
 * ### **Content**
-    
+   * The icons in the footer for social media links was taken from Font Awesome 
 
 * ### **Media**
-* The favicon was from [favicon](https://www.flaticon.com/free-icons/marvelß).
+* The favicon was from [favicon](https://www.flaticon.com/free-icons/marvel).
 * The icon in the navigation bar was created by the developer using Adobe Express.
 * The photos used on the Home and sign-up pages of the site were taken from [unsplash](https://unsplash.com/).

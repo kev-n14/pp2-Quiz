@@ -8,7 +8,7 @@ const trueButton = document.getElementById('True');
 const falseButton = document.getElementById('False');
 const userPoints = document.getElementById('user-points');
 const questionText = document.getElementById('questionText');
-
+const response = document.getElementById('response');
 
 const totalQuestions = document.getElementById('total-questions');
 const totalPoints = document.getElementById('total-points');
@@ -127,11 +127,9 @@ function startQuiz() {
     totalPoints.innerHTML = `/${questions.length - 2}`;
     trueButton.innerHTML = questions[currentQ].answers[0].option;
     falseButton.innerHTML = questions[currentQ].answers[1].option;
-
+    response.innerHTML = questions[currentQ].question;
     previousButton.classList.add('hide');
 }
-
-
 function restart() {
     currentQ = 0;
     currentQuest.innerHTML = currentQ;
@@ -164,12 +162,15 @@ function next() {
         previousButton.classList.remove('hide');
     }
     questionText.innerHTML = questions[currentQ].question;
+
     trueButton.innerHTML = questions[currentQ].answers[0].option;
     trueButton.onclick = () => {
         let num = 0;
         if (questions[currentQ].answers[num].answer) {
             if (points < 10) {
                 points++;
+
+
             }
         }
         userPoints.innerHTML = points;
