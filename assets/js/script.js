@@ -10,6 +10,8 @@ const userPoints = document.getElementById('user-points');
 const questionText = document.getElementById('questionText');
 const response = document.getElementById('response');
 const questionNumber = document.getElementById('questionNumber');
+const totalQuestions = document.getElementById('total-questions');
+const totalPoints = document.getElementById('total-points');
 const questionArea = document.getElementById('questionArea');
 const currentQuest = document.getElementById('currentQ');
 
@@ -21,50 +23,40 @@ var points = 0; // for points
 
 var questions = [
     {
-
-        question: "<p>Welcome</p><p> click next to begin h1</p>",
-
+        question: "<p>Welcome</p><p> Click Next To Begin</p>",
     },
 
-    {
-
-
-
+    {//question:1
         question: "<p>True or False,</p><p>There are 6 infinity stones ?</p>",
         answers: [
             { option: "True", answer: true },
             { option: "False", answer: false },
         ],
-        qImage: "assets/images/question1.jpg"
-
     },
-    {
-        question: "<p>True or False,</p> <p>oul stone is located on Vormir?</p>",
+    {//question:2
+        question: "<p>True or False,</p> <p>The Soul Stone is located on Vormir?</p>",
         answers: [
             { option: "True", answer: true },
             { option: "False", answer: false }
         ]
-
     },
-    {
+    {//question:3
         question: "<p>True or False,</p><p> Tom Cruise voices the character Rocket the raccon?</p>",
         answers: [
             { option: "True", answer: false },
             { option: "False", answer: true }
         ]
-
     }
     ,
-    {
+    {//question:4
         question: "<p>True or False,</p><p> Captain America's shield and Bucky's arm are made of iron?</p>",
         answers: [
             { option: "True", answer: false },
             { option: "False", answer: true }
         ]
-
     }
     ,
-    {
+    {//question:5
         question: "<p>True or False,</p><p> Captain America was able to pick up Thor's hammer in Endgame?</p>",
         answers: [
             { option: "True", answer: true },
@@ -72,24 +64,50 @@ var questions = [
         ]
 
     },
-    // // {
-    // //     question: "<p>True or False,</p><p> Captain America's shield and Bucky's arm are made of iron?</p>",
-    // //     answers: [
-    // //         { option: "True", answer: false },
-    // //         { option: "False", answer: true }
-    // //     ]
+    {//question:6
+        question: "<p>True or False,</p><p>Charles Xavier became paralyzed after being shot by Wolverine?</p>",
+        answers: [
+            { option: "True", answer: false },
+            { option: "False", answer: true }
+        ]
 
-    // // }
-    // ,
-    {
+    }
+    ,
+    {//question:7
+        question: "<p>True or False,</p><p>Howard Stark, Tony Stark's father, created Captain America's shield using vibranium?</p>",
+        answers: [
+            { option: "True", answer: true },
+            { option: "False", answer: false },
+        ],
+    },
+    {//question:8
+        question: "<p>True or False,</p><p>The Space Infinity Stone was the first one to show up in the MCU?</p>",
+        answers: [
+            { option: "True", answer: true },
+            { option: "False", answer: false },
+        ],
+    },
+    {//question:9
+        question: "<p>True or False,</p><p>Thor's hammer's name is Bifrost?</p>",
+        answers: [
+            { option: "True", answer: false },
+            { option: "False", answer: true },
+        ],
+    },
+    {//question:10
+        question: "<p>True or False,</p><p>Captain Marvel was born with her powers?</p>",
+        answers: [
+            { option: "True", answer: false },
+            { option: "False", answer: true },
+        ],
+    },
+    {// end of quiz
         question: "<p>End Of Quiz</p><p> Click The Finish Button To Get Result</p>",
         answers: [
             { option: null },
             { option: null }
         ]
     }
-
-
 ]
 // onclick events to call functions
 restartButton.addEventListener('click', restart);
@@ -107,7 +125,9 @@ function startQuiz() {
     trueButton.classList.add('hide');
     falseButton.classList.add('hide');
     currentQ = 0;
-    questionText.innerHTML = ques(questions[currentQ].question);
+    questionText.innerHTML = questions[currentQ].question;
+    totalQuestions.innerHTML = `/${questions.length - 2}`;
+    totalPoints.innerHTML = `/${questions.length - 2}`;
     trueButton.innerHTML = questions[currentQ].answers[0].option;
     falseButton.innerHTML = questions[currentQ].answers[1].option;
 
@@ -136,7 +156,7 @@ function next() {
     restartButton.classList.remove('hide');
     currentQuest.innerHTML = currentQ++;
 
-    if (currentQ >= 6) {
+    if (currentQ >= 10) {
         finishButton.classList.remove('hide');
         nextButton.classList.add('hide');
         previousButton.classList.remove('hide');
@@ -146,12 +166,12 @@ function next() {
     trueButton.onclick = () => {
         let num = 0;
         if (questions[currentQ].answers[num].answer) {
-            if (points < 5) {
+            if (points < 10) {
                 points++;
             }
         }
         userPoints.innerHTML = points;
-        if (currentQ <= 5) {
+        if (currentQ <= 10) {
             next();
         }
     }
@@ -159,12 +179,12 @@ function next() {
     falseButton.onclick = () => {
         let num = 1;
         if (questions[currentQ].answers[num].answer) {
-            if (points <= 5) {
+            if (points <= 10) {
                 points++;
             }
         }
         userPoints.innerHTML = points;
-        if (currentQ <= 5) {
+        if (currentQ <= 10) {
             next();
         }
     }
@@ -182,12 +202,12 @@ function previous() {
     trueButton.onclick = () => {
         let num = 0;
         if (questions[currentQ].answers[num].answer) {
-            if (points < 5) {
+            if (points < 10) {
                 points++;
             }
         }
         userPoints.innerHTML = points;
-        if (currentQ < 5) {
+        if (currentQ < 10) {
             next();
         }
     }
@@ -195,12 +215,12 @@ function previous() {
     falseButton.onclick = () => {
         let num = 1;
         if (questions[currentQ].answers[num].answer) {
-            if (points < 5) {
+            if (points < 10) {
                 points++;
             }
         }
         userPoints.innerHTML = points;
-        if (currentQ < 2) {
+        if (currentQ < 10) {
             next();
         }
     }
@@ -215,14 +235,17 @@ function submit() {
     trueButton.classList.add('hide');
     falseButton.classList.add('hide');
 
-    if (points == 5) {
-        questionText.innerHTML = `<p>Congratulations You pointsd ${points}/5. You know your marvel movies</p>`;
+    if (points == 10) {
+        questionText.innerHTML = `<p>Congratulations You Scored ${points}/ ${questions.length - 2}. You Know Your Marvel Movies</p>`;
     }
-    else if (points < 5 && points >= 3) {
-        questionText.innerHTML = `<p>You pointsd ${points}/5 .Not bad</p>`;
+    else if (points < 10 && points >= 7) {
+        questionText.innerHTML = `<p>You Scored ${points}/${questions.length - 2} .Not Bad, You Know Your Stuff</p>`;
     }
-    else if (points < 3 && points >= 0) {
-        questionText.innerHTML = `<p>You pointsd ${points}/5 .Watch the movies again</p>`;
+    else if (points < 7 && points >= 4) {
+        questionText.innerHTML = `<p>You Scored ${points}/${questions.length - 2} .There Is Room For Improvement</p>`;
+    }
+    else if (points < 4 && points >= 0) {
+        questionText.innerHTML = `<p>You Scored ${points}/${questions.length - 2} .You Shouls Watch The Movies Again</p>`;
     }
 
 }

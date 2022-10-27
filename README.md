@@ -77,7 +77,7 @@ In the future we hope to add:
  ### Programs Used
 
 1. [Google Fonts](https://fonts.google.com/):
-    * Google fonts were used to choose the fonts for this site. the fonts were declared in the style.css file which is used on all pages throughout the site.
+    * Google fonts were used to choose the fonts for this site. The fonts were declared in the style.css file which is used on all pages throughout the site.
 
 1. [Font Awesome](https://fontawesome.com/):
     * Font Awesome was used on all pages throughout the website to add icons for social media links.

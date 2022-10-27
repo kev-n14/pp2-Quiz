@@ -37,28 +37,20 @@ nav {
 }
 
 .nav-bar {
-
     flex-direction: row;
 }
 
 #logo {
     height: 100%;
     width: auto;
+    opacity: 100%;
 }
-
-
 
 .logo {
     padding: 5px;
     height: auto;
     width: auto;
     margin: 0 auto;
-
-}
-
-.questionImage {
-    height: 100%;
-    width: 100%;
 }
 
 img {
@@ -69,7 +61,6 @@ img {
 .links {
     padding: 2px;
     max-width: 40%;
-
 }
 
 .links a {
@@ -78,7 +69,6 @@ img {
 }
 
 /* End Header */
-
 /* Main Section */
 .content {
     max-width: 90%;
@@ -102,7 +92,6 @@ img {
     font-size: large;
     font-weight: bold;
     padding-top: 10px;
-
 }
 
 .questionNumber {
@@ -114,24 +103,17 @@ img {
     color: #DB2727;
 }
 
+/* edit question,score number */
 #total-points,
 #total-questions {
     color: #2F648E;
 }
 
+/* edit question text */
 #questionText p {
     font-size: 1.2em;
     font-weight: bold;
 }
-
-.questionImage {
-    height: 100%;
-    width: 100%;
-    min-width: auto;
-    max-height: 60%;
-    padding: 5px;
-}
-
 
 .content {
     display: flex;
@@ -141,10 +123,10 @@ img {
     padding: 20px;
 }
 
+/* button attributes */
 .btn {
     font-size: large;
     font-weight: bold;
-    box-shadow: 0 6px 12px -2px rgba(#f27813, .15);
     background: #2F648E;
     border-radius: 4px;
     padding: 8px;
@@ -152,46 +134,37 @@ img {
     margin: 6px;
     cursor: pointer;
 }
-
+/* when mouse hover change attributes of button */
 .btn:hover {
     color: black;
     background: #64B9E0;
     padding: 15px;
 }
 
+/* true or false buttons */
 .options {
     padding: 10px;
     order: 3;
 }
 
+/* buuton to control navigation through game */
 .controls {
     padding: 10px;
     order: 4;
 }
-
+/* add to buttons to hide button when they are not needed */
 .hide {
     display: none;
 }
 
-.correct {
-
-    color: red;
-}
-
-.questionImg {
-    width: 700px;
-    height: 350px;
-    padding: 10px;
-}
-
-/* End of main section */
+/* End of Main Section */
 
 /* Footer */
 footer {
     background-color: #3a3a3a;
     opacity: 90%;
     color: #fff;
-    currentQition: absolute;
+    position: absolute;
     bottom: 0;
     width: 100%;
     padding-top: 10px;
@@ -204,11 +177,7 @@ footer {
     flex-direction: column;
     text-align: center;
     height: auto;
-
 }
-
-
-
 
 .socials {
     list-style: none;
@@ -240,7 +209,6 @@ footer {
 .socials a:hover i {
     color: aqua;
 }
-
 
 .footer-bottom {
     padding: 20px;
