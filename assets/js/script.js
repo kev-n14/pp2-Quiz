@@ -1,7 +1,7 @@
 
 // create variables that will represent elements in document to access elements via the DOM 
 const restartButton = document.getElementById('restart');
-const previousButton = document.getElementById('prev');
+const previousButton = document.getElementById('previous');
 const nextButton = document.getElementById('next');
 const finishButton = document.getElementById('finish');
 const trueButton = document.getElementById('True');
@@ -152,6 +152,11 @@ function next() {
     falseButton.classList.remove('hide');
     restartButton.classList.remove('hide');
     currentQuest.innerHTML = currentQ++;
+    if (currentQ >= 2) {
+
+        previousButton.classList.remove('hide');
+        console.log("im in next function  " + currentQ);
+    }
 
     if (currentQ >= 10) {
         finishButton.classList.remove('hide');
@@ -185,14 +190,17 @@ function next() {
             next();
         }
     };
-    previousButton.classList.remove('hide');
+
 }
 // prev() function called when previousButton is clicked
 function previous() {
-    currentQuest.innerHTML = currentQ--;
+    currentQuest.innerHTML = --currentQ;
     if (currentQ <= 0) {
         previousButton.classList.add('hide');
         nextButton.classList.remove('hide');
+        trueButton.classList.add('hide');
+        falseButton.classList.add('hide');
+        console.log("current is " + currentQ);
     }
     questionText.innerHTML = questions[currentQ].question;
     trueButton.innerHTML = questions[currentQ].answers[0].option;
@@ -236,13 +244,13 @@ function submit() {
         questionText.innerHTML = `<p>Congratulations You Scored ${points}/ ${questions.length - 2}. You Know Your Marvel Movies</p>`;
     }
     else if (points < 10 && points >= 7) {
-        questionText.innerHTML = `<p>You Scored ${points}/${questions.length - 2} .Not Bad, You Know Your Stuff</p>`;
+        questionText.innerHTML = `<p>You Scored ${points}/${questions.length - 2}.</p><p> Not Bad, You Know Your Stuff</p>`;
     }
     else if (points < 7 && points >= 4) {
-        questionText.innerHTML = `<p>You Scored ${points}/${questions.length - 2} .There Is Room For Improvement</p>`;
+        questionText.innerHTML = `<p>You Scored ${points}/${questions.length - 2}.</p><p> There Is Room For Improvement</p>`;
     }
     else if (points < 4 && points >= 0) {
-        questionText.innerHTML = `<p>You Scored ${points}/${questions.length - 2} .You Shoulds Watch The Movies Again</p>`;
+        questionText.innerHTML = `<p>You Scored ${points}/${questions.length - 2}.</p><p> You Should Watch The Movies Again</p>`;
     }
 
 }
