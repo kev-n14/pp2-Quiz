@@ -102,9 +102,9 @@ In the future we hope to add:
 
 The W3C Markup Validator and W3C jigsaw CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
 * **HTML**
-No errors were returned when passing through the official [W3C validator]()
+No errors were returned when passing through the official [W3C validator](https://kev-n14.github.io/pp2-Quiz/)
 * **CSS**
-No errors were found when passing through the official [(Jigsaw) validator]()
+No errors were found when passing through the official [(Jigsaw) validator](https://validator.w3.org/nu/#textarea)
 
 ###  **User Stories from the User Experience (UX) Section**
 #### **First Time Visitor Goals**

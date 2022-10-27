@@ -245,7 +245,7 @@ function submit() {
         questionText.innerHTML = `<p>You Scored ${points}/${questions.length - 2} .There Is Room For Improvement</p>`;
     }
     else if (points < 4 && points >= 0) {
-        questionText.innerHTML = `<p>You Scored ${points}/${questions.length - 2} .You Shouls Watch The Movies Again</p>`;
+        questionText.innerHTML = `<p>You Scored ${points}/${questions.length - 2} .You Shoulds Watch The Movies Again</p>`;
     }
 
 }
