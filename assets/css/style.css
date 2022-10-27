@@ -86,7 +86,6 @@ img {
     text-align: center;
     margin: auto;
     margin-top: 5%;
-    display: flex;
     padding: 20px;
 }
 
@@ -101,13 +100,13 @@ img {
     font-weight: 600;
 }
 
-#user-points,
+#userPoints,
 #currentQ {
     color: #DB2727;
 }
 
 /* edit question,score number */
-#total-points,
+#totalPoints,
 #total-questions {
     color: #2F648E;
 }
@@ -146,7 +145,7 @@ img {
 }
 
 /* true or false buttons */
-.options {
+.choices {
     padding: 10px;
     order: 3;
 }
