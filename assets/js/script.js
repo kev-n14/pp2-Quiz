@@ -8,11 +8,11 @@ const trueButton = document.getElementById('True');
 const falseButton = document.getElementById('False');
 const userPoints = document.getElementById('user-points');
 const questionText = document.getElementById('questionText');
-const response = document.getElementById('response');
-const questionNumber = document.getElementById('questionNumber');
+
+
 const totalQuestions = document.getElementById('total-questions');
 const totalPoints = document.getElementById('total-points');
-const questionArea = document.getElementById('questionArea');
+
 const currentQuest = document.getElementById('currentQ');
 
 var currentQ = 0; // for current question
@@ -46,16 +46,14 @@ var questions = [
             { option: "True", answer: false },
             { option: "False", answer: true }
         ]
-    }
-    ,
+    },
     {//question:4
         question: "<p>True or False,</p><p> Captain America's shield and Bucky's arm are made of iron?</p>",
         answers: [
             { option: "True", answer: false },
             { option: "False", answer: true }
         ]
-    }
-    ,
+    },
     {//question:5
         question: "<p>True or False,</p><p> Captain America was able to pick up Thor's hammer in Endgame?</p>",
         answers: [
@@ -71,8 +69,7 @@ var questions = [
             { option: "False", answer: true }
         ]
 
-    }
-    ,
+    },
     {//question:7
         question: "<p>True or False,</p><p>Howard Stark, Tony Stark's father, created Captain America's shield using vibranium?</p>",
         answers: [
@@ -108,10 +105,10 @@ var questions = [
             { option: null }
         ]
     }
-]
+];
 // onclick events to call functions
 restartButton.addEventListener('click', restart);
-previousButton.addEventListener('click', prev);
+previousButton.addEventListener('click', previous);
 nextButton.addEventListener('click', next);
 finishButton.addEventListener('click', submit);
 
@@ -187,7 +184,7 @@ function next() {
         if (currentQ <= 10) {
             next();
         }
-    }
+    };
     previousButton.classList.remove('hide');
 }
 // prev() function called when previousButton is clicked
@@ -210,7 +207,7 @@ function previous() {
         if (currentQ < 10) {
             next();
         }
-    }
+    };
     falseButton.innerHTML = questions[currentQ].answers[1].option;
     falseButton.onclick = () => {
         let num = 1;
@@ -223,7 +220,7 @@ function previous() {
         if (currentQ < 10) {
             next();
         }
-    }
+    };
     previousButton.classList.remove('hide');
 }
 
