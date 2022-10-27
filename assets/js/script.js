@@ -1,44 +1,45 @@
+
 // create variables that will represent elements in document to access elements via the DOM 
-const restartBtn = document.getElementById('restart');
-const prevBtn = document.getElementById('prev');
-const nextBtn = document.getElementById('next');
-const finishBtn = document.getElementById('finish');
-const trueBtn = document.getElementById('True');
-const falseBtn = document.getElementById('False');
-const userScore = document.getElementById('user-score');
+const restartButton = document.getElementById('restart');
+const previousButton = document.getElementById('prev');
+const nextButton = document.getElementById('next');
+const finishButton = document.getElementById('finish');
+const trueButton = document.getElementById('True');
+const falseButton = document.getElementById('False');
+const userPoints = document.getElementById('user-points');
 const questionText = document.getElementById('questionText');
+const response = document.getElementById('response');
+const questionNumber = document.getElementById('questionNumber');
+const questionArea = document.getElementById('questionArea');
 const currentQuest = document.getElementById('currentQ');
-const image = document.getElementById('image');
 
 var currentQ = 0; // for current question
-var score = 0; // for score
-var pos = 0,
-    test, test_status, question, choice, choices, chA, chB, chC, chD, correct = 0;
+var points = 0; // for points
+
 // create an array called questions
 //contain the image,question, answers and options
 
 var questions = [
     {
 
-        question: "Welcome click next to begin",
+        question: "<p>Welcome</p><p> click next to begin h1</p>",
+
+    },
+
+    {
+
+
+
+        question: "<p>True or False,</p><p>There are 6 infinity stones ?</p>",
+        answers: [
+            { option: "True", answer: true },
+            { option: "False", answer: false },
+        ],
+        qImage: "assets/images/question1.jpg"
 
     },
     {
-        question: "How many Infinity Stones are there?",
-        a: "3",
-        b: "6",
-        c: "4",
-        d: "9",
-        answer: "B"
-        // img: "assets/images/question1",
-        // question: "True or False, There are 6 infinity stones ?",
-        // answers: [
-        //     { option: "True", answer: true },
-        //     { option: "False", answer: false },
-        // ]
-    },
-    {
-        question: "True or False, soul stone is located on Vormir?",
+        question: "<p>True or False,</p> <p>oul stone is located on Vormir?</p>",
         answers: [
             { option: "True", answer: true },
             { option: "False", answer: false }
@@ -46,7 +47,7 @@ var questions = [
 
     },
     {
-        question: "True or False, Tom Cruise voices the character Rocket the raccon?",
+        question: "<p>True or False,</p><p> Tom Cruise voices the character Rocket the raccon?</p>",
         answers: [
             { option: "True", answer: false },
             { option: "False", answer: true }
@@ -55,7 +56,7 @@ var questions = [
     }
     ,
     {
-        question: "True or False, Captain America's shield and Bucky's arm are made of iron?",
+        question: "<p>True or False,</p><p> Captain America's shield and Bucky's arm are made of iron?</p>",
         answers: [
             { option: "True", answer: false },
             { option: "False", answer: true }
@@ -64,252 +65,165 @@ var questions = [
     }
     ,
     {
-        question: "True or False, Captain America was able to pick up Thor's hammer in Endgame?",
+        question: "<p>True or False,</p><p> Captain America was able to pick up Thor's hammer in Endgame?</p>",
         answers: [
             { option: "True", answer: true },
             { option: "False", answer: false }
         ]
 
     },
-    {
-        question: "True or False, Captain America's shield and Bucky's arm are made of iron?",
-        answers: [
-            { option: "True", answer: false },
-            { option: "False", answer: true }
-        ]
+    // // {
+    // //     question: "<p>True or False,</p><p> Captain America's shield and Bucky's arm are made of iron?</p>",
+    // //     answers: [
+    // //         { option: "True", answer: false },
+    // //         { option: "False", answer: true }
+    // //     ]
 
+    // // }
+    // ,
+    {
+        question: "<p>End Of Quiz</p><p> Click The Finish Button To Get Result</p>",
+        answers: [
+            { option: null },
+            { option: null }
+        ]
     }
 
 
 ]
 // onclick events to call functions
-//used addEventListener instead of onClick
-restartBtn.addEventListener('click', restart);
-prevBtn.addEventListener('click', prev);
-nextBtn.addEventListener('click', next);
-finishBtn.addEventListener('click', submit);
+restartButton.addEventListener('click', restart);
+previousButton.addEventListener('click', prev);
+nextButton.addEventListener('click', next);
+finishButton.addEventListener('click', submit);
+
+
+
 // get executed when the page loads and the script gets executed
 function startQuiz() {
-    prevBtn.classList.add('hide');
-    restartBtn.classList.add('hide');
-    finishBtn.classList.add('hide');
-    trueBtn.classList.add('hide');
-    falseBtn.classList.add('hide');
+    previousButton.classList.add('hide');
+    restartButton.classList.add('hide');
+    finishButton.classList.add('hide');
+    trueButton.classList.add('hide');
+    falseButton.classList.add('hide');
     currentQ = 0;
-    questionText.innerHTML = questions[currentQ].question;
-    trueBtn.innerHTML = questions[currentQ].answers[0].option;
-    falseBtn.innerHTML = questions[currentQ].answers[1].option;
-    img = questions[currentQ].img;
-
-    image.innerHTML += "<img src=\"" + img + "\" width=\"200\" height=\"200\"><br>";
-    // questions.innerHTML += "<img src=\"" + img + "\" width=\"200\" height=\"200\"><br>";
-    trueCh();
-    falseCh();
-    prevBtn.classList.add('hide');
-    content = get("content");
-    if (currentQ >= questions.length) {
-        content.innerHTML = "<h2>You got " + correct + " of " + questions.length + " questions correct</h2>";
-        get("questionText").innerHTML = "content completed";
-
-
-
-        return false;
-    }
-    get("questionText").innerHTML = "Question " + (currentQ + 1) + " of " + questions.length;
-
-    question = questions[currentQ].question;
-    chA = questions[currentQ].a;
-    chB = questions[currentQ].b;
-    chC = questions[currentQ].c;
-    chD = questions[currentQ].d;
-    //Add local var to hold uri
-    img = questions[currentQ].img;
-
-    content.innerHTML = "<h3>" + question + "</h3>";
-
-    //Add <img> element to DOM with source
-    // content.innerHTML += "<img src=\"" + img + "\" width=\"200\" height=\"200\"><br>";
-
-    content.innerHTML += "<label> <input type='radio' name='choices' value='A'> " + chA + "</label><be>";
-    content.innerHTML += "<label> <input type='radio' name='choices' value='B'> " + chB + "</label><be>";
-    content.innerHTML += "<label> <input type='radio' name='choices' value='C'> " + chC + "</label><be>";
-    content.innerHTML += "<label> <input type='radio' name='choices' value='D'> " + chD + "</label><br><be>";
-    content.innerHTML += "<button onclick='checkAnswer()'>Submit Answer</button>";
-
-}
-
-startQuiz();
-function get(x) {
-    return document.getElementById(x);
-}
-
-function checkAnswer() {
-    choices = document.getElementsByName("choices");
-    for (var i = 0; i < choices.length; i++) {
-        if (choices[i].checked) {
-            choice = choices[i].value;
-        }
-    }
-
-    if (choice == questions[currentQ].answer) {
-        score++;
-    }
-
-    currentQ++;
-
-    renderQuestion();
+    questionText.innerHTML = ques(questions[currentQ].question);
+    trueButton.innerHTML = questions[currentQ].answers[0].option;
+    falseButton.innerHTML = questions[currentQ].answers[1].option;
+   
+    previousButton.classList.add('hide');
 }
 
 
-
-//reset the cuurent question, score,remove the hide class if it's assigned to an element.
-// calls startQuiz() function
-function trueCh() {
-
-    trueBtn.onclick = () => {
-
-        let num = 0;
-
-        if (questions[currentQ].answers[num].answer) {
-
-            if (score < 5) {
-                score++;
-
-            }
-        }
-        userScore.innerHTML = score;
-        if (currentQ <= 5) {
-            next();
-        }
-    }
-
-
-}
-function falseCh() {
-
-    falseBtn.onclick = () => {
-        let num = 1;
-        if (questions[currentQ].answers[num].answer) {
-            if (score <= 5) {
-                score++;
-            }
-        }
-        userScore.innerHTML = score;
-        if (currentQ <= 5) {
-            next();
-        }
-    }
-
-
-}
 function restart() {
-
     currentQ = 0;
     currentQuest.innerHTML = currentQ;
-    prevBtn.classList.remove('hide');
-    nextBtn.classList.remove('hide');
-    finishBtn.classList.remove('hide');
-    trueBtn.classList.remove('hide');
-    falseBtn.classList.remove('hide');
-    score = 0;
-    userScore.innerHTML = score;
-    startQuiz();
+    previousButton.classList.remove('hide');
+    nextButton.classList.remove('hide');
+    finishButton.classList.remove('hide');
+    trueButton.classList.remove('hide');
+    falseButton.classList.remove('hide');
+    points = 0;
+    userPoints.innerHTML = points;
+
+    startQuiz();// call startQuiz() to start quiz again
 
 }
-// // increment currentQ
+// next() function called when nextButton is clicked
 function next() {
-    trueBtn.classList.remove('hide');
-    falseBtn.classList.remove('hide');
+    trueButton.classList.remove('hide');
+    falseButton.classList.remove('hide');
+    restartButton.classList.remove('hide');
     currentQuest.innerHTML = currentQ++;
 
     if (currentQ >= 6) {
-        finishBtn.classList.remove('hide');
-        nextBtn.classList.add('hide');
-        prevBtn.classList.remove('hide');
+        finishButton.classList.remove('hide');
+        nextButton.classList.add('hide');
+        previousButton.classList.remove('hide');
     }
     questionText.innerHTML = questions[currentQ].question;
-    trueBtn.innerHTML = questions[currentQ].answers[0].option;
-    trueBtn.onclick = () => {
+    trueButton.innerHTML = questions[currentQ].answers[0].option;
+    trueButton.onclick = () => {
         let num = 0;
         if (questions[currentQ].answers[num].answer) {
-            if (score < 5) {
-                score++;
+            if (points < 5) {
+                points++;
             }
         }
-        userScore.innerHTML = score;
+        userPoints.innerHTML = points;
         if (currentQ <= 5) {
             next();
         }
     }
-    falseBtn.innerHTML = questions[currentQ].answers[1].option;
-    falseBtn.onclick = () => {
+    falseButton.innerHTML = questions[currentQ].answers[1].option;
+    falseButton.onclick = () => {
         let num = 1;
         if (questions[currentQ].answers[num].answer) {
-            if (score <= 5) {
-                score++;
+            if (points <= 5) {
+                points++;
             }
         }
-        userScore.innerHTML = score;
+        userPoints.innerHTML = points;
         if (currentQ <= 5) {
             next();
         }
     }
-    prevBtn.classList.remove('hide');
+    previousButton.classList.remove('hide');
 }
-
-function prev() {
-    currentQuest.innerHTML = --currentQ;
+// prev() function called when previousButton is clicked
+function previous() {
+    currentQuest.innerHTML = currentQ--;
     if (currentQ <= 0) {
-        prevBtn.classList.add('hide');
-        nextBtn.classList.remove('hide');
+        previousButton.classList.add('hide');
+        nextButton.classList.remove('hide');
     }
     questionText.innerHTML = questions[currentQ].question;
-    trueBtn.innerHTML = questions[currentQ].answers[0].option;
-    trueBtn.onclick = () => {
+    trueButton.innerHTML = questions[currentQ].answers[0].option;
+    trueButton.onclick = () => {
         let num = 0;
         if (questions[currentQ].answers[num].answer) {
-            if (score < 5) {
-                score++;
+            if (points < 5) {
+                points++;
             }
         }
-        userScore.innerHTML = score;
+        userPoints.innerHTML = points;
         if (currentQ < 5) {
             next();
         }
     }
-    falseBtn.innerHTML = questions[currentQ].answers[1].option;
-    falseBtn.onclick = () => {
+    falseButton.innerHTML = questions[currentQ].answers[1].option;
+    falseButton.onclick = () => {
         let num = 1;
         if (questions[currentQ].answers[num].answer) {
-            if (score < 5) {
-                score++;
+            if (points < 5) {
+                points++;
             }
         }
-        userScore.innerHTML = score;
+        userPoints.innerHTML = points;
         if (currentQ < 2) {
             next();
         }
     }
-    prevBtn.classList.remove('hide');
+    previousButton.classList.remove('hide');
 }
 
 function submit() {
 
-    prevBtn.classList.add('hide');
-    nextBtn.classList.add('hide');
-    finishBtn.classList.add('hide');
-    trueBtn.classList.add('hide');
-    falseBtn.classList.add('hide');
+    previousButton.classList.add('hide');
+    nextButton.classList.add('hide');
+    finishButton.classList.add('hide');
+    trueButton.classList.add('hide');
+    falseButton.classList.add('hide');
 
-    if (score == 5) {
-        questionText.innerHTML = `Congratulations You scored ${score}/5. You know your marvel movies`;
+    if (points == 5) {
+        questionText.innerHTML = `<p>Congratulations You pointsd ${points}/5. You know your marvel movies</p>`;
     }
-    else if (score < 5 && score >= 3) {
-        questionText.innerHTML = `You scored ${score}/5 .Not bad`;
+    else if (points < 5 && points >= 3) {
+        questionText.innerHTML = `<p>You pointsd ${points}/5 .Not bad</p>`;
     }
-    else if (score < 3 && score >= 0) {
-        questionText.innerHTML = `You scored ${score}/5 .Watch the movies again`;
+    else if (points < 3 && points >= 0) {
+        questionText.innerHTML = `<p>You pointsd ${points}/5 .Watch the movies again</p>`;
     }
 
 }
-// window.addEventListener("load", renderQuestion);
+startQuiz();// calls startQuiz() function

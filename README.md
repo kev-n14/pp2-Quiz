@@ -2,19 +2,33 @@
 
 ![Display on differnt screens]()
 
-# F
+# Quizzers Assemble
+This site is a  fun and interactive quiz for fans of the marvel franchise. It has a range of 15 true or false questions based on the marvel movies. The questions cover topics such as characters, eventspp2-quiz-header facts about the movies. This site aims to be fun aswell as educational.
 
+The sites game keeps the track of the users points and at the end of the quiz displays a message depanding on the user points.
 
 ## Features
 ---
 ### **Navigation Bar**
+![Navigation Bar](/assets/images/read-me/pp2-quiz-header.png)
+The Navigation Bar is found at the top of the page of the site, it is fully responsive on all screen sizes.
+The Navigation Bar includes a logo that links to the Home Page.
+### **Quiz Section**
+![Footer section](/assets/images/read-me/pp2-quiz-question.png)
+The main quiz section of the website has the current question the user is on and below this the user will find their points. The quiz section aslo includes the question and two buttons which have the value true or false.
 
-
-
+### **Controls Section**
+![Footer section](/assets/images/read-me/pp2-quiz-controls.png)
+the controls section contains all the buttons the user needs to navigate through the game. The control button are restart,previous, next and finish button. The restart button will reset the quiz back to question one and set the users points back to zero. The next and previous button allows the user to navigate through the quiz. 
 ### **Footer**
+![Footer section](/assets/images/read-me/pp2-quiz-footer.png)
+The footer section includes links to the relevant social media sites for Quizzers Assemble website. The links will open to a new tab to allow easy navigation for the user.
+The footer is valuable to the user as it encourages them to keep connected via social media. Below the social media links is a short text noting the designer of the site.
 
 ### **Features Left to Implement**
-
+In the future we hope to add:
+* when a user answers and question and comesback to the question thier answer is still selected.
+* images to the questions.
 
 ## User Experience (UX)
 ---
@@ -41,11 +55,13 @@
 
 * ### **Design**
     * **Colour Scheme**
-        *  
+        *  As the site is based around comic's and the marvel franchise. The current question and the user points are done in blue and red of the marvel logo and one of its main characters Captain America. The website background image is a collection of comics books with different yellows, reds, blue's and greys for contrast.
+        * The quiz section is done in a nuetral beige colour so it is easy on the users eyes and will reduce fatique. 
+        * the controls are a marvel blue to ties in to the theme of the website.
     * **Typography**
-        *
+        *he "Noto Serif Georgian" font is the main font used throughout the whole website with Georgia, Times, and serif as the fallback font respectively in case the font isn't being imported into the site correctly. "Noto Serif Georgian" is a clean, attractive, and appropriate font.
     * **Imagery**
-         * 
+         * The website background image is a collection of comics books with different yellows, reds, blue's and greys for contrast.
 * ### **Wireframes**
    
 
@@ -56,6 +72,7 @@
 ### Languages Used
 * [HTML5](https://en.wikipedia.org/wiki/HTML5)
 * [CSS3](https://en.wikipedia.org/wiki/CSS)
+* [Javascript](https://en.wikipedia.org/wiki/JavaScript)
 
  ### Programs Used
 
@@ -70,6 +87,9 @@
 
 1. [GitHub](https://github.com/):
     * GitHub was used to store the site's code after being pushed from Gitpod.
+
+1. [Visual Studio](https://visualstudio.microsoft.com/):
+    * Visual Studio was used to create and write the code for the website.
 
 1. [Balsamiq](https://balsamiq.com/):
     * Balsamiq was used to create the wireframes during the design process.
@@ -86,7 +106,7 @@ No errors were returned when passing through the official [W3C validator]()
 * **CSS**
 No errors were found when passing through the official [(Jigsaw) validator]()
 
-### contenting User Stories from the User Experience (UX) Section
+###  **User Stories from the User Experience (UX) Section**
 #### **First Time Visitor Goals**
 1. 
  
@@ -103,8 +123,8 @@ No errors were found when passing through the official [(Jigsaw) validator]()
 ## Performance
 ---
 ### **Lighthouse content**
-
-
+* Home Page
+![Home Page](/assets/images/read-me/)
 ## Deployment
 ---
 ### **GitHub Pages**
@@ -154,4 +174,6 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REcurrentQITORY
     
 
 * ### **Media**
-   
+* The favicon was from [favicon](https://www.flaticon.com/free-icons/marvelß).
+* The icon in the navigation bar was created by the developer using Adobe Express.
+* The photos used on the Home and sign-up pages of the site were taken from [unsplash](https://unsplash.com/).
