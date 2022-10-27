@@ -1,6 +1,6 @@
 # pp2-Quiz
 
-![Display on differnt screens]()
+![Display on differnt screens](assets/images/read-me/all-screens.png)
 
 # Quizzers Assemble
 This site is a  fun and interactive quiz for fans of the marvel franchise. It has a range of 15 true or false questions based on the marvel movies. The questions cover topics such as characters, eventspp2-quiz-header facts about the movies. This site aims to be fun aswell as educational.
