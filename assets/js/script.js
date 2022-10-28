@@ -99,6 +99,7 @@ var questions = [
             { option: "False", answer: true },
         ],
     },
+
     {// end of quiz
         question: "<p>End Of Quiz</p><p> Click The Finish Button To Get Result</p>",
         answers: [
@@ -146,6 +147,7 @@ function restart() {
 }
 // next() function called when nextButton is clicked
 function next() {
+
     currentQuest.innerHTML = ++currentQ; // currentQuest is assigned the value stored in currentQ
     trueButton.classList.remove('hide');
     falseButton.classList.remove('hide');
@@ -181,7 +183,7 @@ function next() {
     falseButton.onclick = () => {
         let num = 1;
         if (questions[currentQ].answers[num].answer) { //will check to see if the answer selected is correct from the questions array. answer array pointing at index 1 for false
-            if (points <= 10) {
+            if (points < 10) {
                 points++;
             }
         }

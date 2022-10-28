@@ -3,7 +3,7 @@
 ![Display on differnt screens](assets/images/read-me/on-all-devices.png)
 
 # Quizzers Assemble
-This site is a  fun and interactive quiz for fans of the marvel franchise. It has a range of 15 true or false questions based on the Marvel movies. The questions cover topics such as characters, eventspp2-quiz-header facts about the movies. This site aims to be fun as well as educational.
+This site is a  fun and interactive quiz for fans of the marvel franchise. It has a range of 10 true or false questions based on the Marvel movies. The questions cover topics such as characters, eventspp2-quiz-header facts about the movies. This site aims to be fun as well as educational.
 
 The site's game keeps the track of the user's points and at the end of the quiz displays a message depending on the user's points.
 
@@ -14,11 +14,11 @@ The site's game keeps the track of the user's points and at the end of the quiz 
 The Navigation Bar is found at the top of the page, the site is fully responsive on all screen sizes.
 The Navigation Bar includes a logo that links to the Home Page.
 ### **Quiz Section**
-![Footer section](/assets/images/read-me/pp2-quiz-question.png)
+![Quiz section](/assets/images/read-me/pp2-quiz-question.png)
 The main quiz section of the website has the current question the user is on and below this, the user will find their points. The quiz section also includes the question and two buttons that have the value true or false.
 
 ### **Controls Section**
-![Footer section](/assets/images/read-me/pp2-quiz-controls.png)
+![Controls section](/assets/images/read-me/pp2-quiz-controls.png)
 the controls section contains all the buttons the user needs to navigate through the game. The control buttons are restart, previous, next, and finish buttons. The restart button will reset the quiz back to question one and set the user's points back to zero. The next and previous button allows the user to navigate through the quiz. 
 ### **Footer**
 ![Footer section](/assets/images/read-me/pp2-quiz-footer.png)
@@ -109,6 +109,8 @@ In the future we hope to add:
 * **HTML**
 No errors were returned when passing through the official [W3C validator](https://kev-n14.github.io/pp2-Quiz/)
 * **CSS**
+No errors were found when passing through the official [(Jigsaw) validator](https://validator.w3.org/nu/#textarea)
+* **Javascript**
 No errors were found when passing through the official [(Jigsaw) validator](https://validator.w3.org/nu/#textarea)
 
 ###  **User Stories from the User Experience (UX) Section**
