@@ -111,7 +111,7 @@ No errors were returned when passing through the official [W3C validator](https:
 * **CSS**
 No errors were found when passing through the official [(Jigsaw) validator](https://validator.w3.org/nu/#textarea)
 * **Javascript**
-No errors were found when passing through the official [(Jigsaw) validator](https://validator.w3.org/nu/#textarea)
+No errors were found when passing through the official [(Jshint) validator](https://jshint.com/)
 
 ###  **User Stories from the User Experience (UX) Section**
 #### **First Time Visitor Goals**

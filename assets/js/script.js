@@ -21,12 +21,10 @@ var points = 0; // for points
 
 // create an array called questions
 //contain the question, choices and answers
-
 var questions = [
     {
         question: "<p>Welcome</p><p> Click Next To Begin</p>",
     },
-
     {//question:1
         question: "<p>True or False,</p><p>There are 6 infinity stones ?</p>",
         answers: [
@@ -99,7 +97,6 @@ var questions = [
             { option: "False", answer: true },
         ],
     },
-
     {// end of quiz
         question: "<p>End Of Quiz</p><p> Click The Finish Button To Get Result</p>",
         answers: [
@@ -110,7 +107,6 @@ var questions = [
 ];
 // onclick events to call functions
 // when button is clicked the corresponding function is called
-
 nextButton.addEventListener('click', next);
 finishButton.addEventListener('click', submit);
 restartButton.addEventListener('click', restart);//restart button when clicked calls the restart function.
@@ -129,34 +125,20 @@ function startQuiz() {
     trueButton.innerHTML = questions[currentQ].answers[0].option;//true buuton assigned the value found in the answers array at location 0
     falseButton.innerHTML = questions[currentQ].answers[1].option;//false buuton assigned the value found in the answers array at location 1
 }
-// Restart function will reset all values back to 0,hidden elements have the hidden attribute removed that need to be hidden and begin the quiz again by calling startQuiz();
-function restart() {
-    currentQ = 0;
-    currentQuest.innerHTML = currentQ;//currentQ is applied HTML element of currentQuest
-    trueButton.classList.remove('hide');
-    falseButton.classList.remove('hide');
-    previousButton.classList.remove('hide');
-    nextButton.classList.remove('hide');
-    finishButton.classList.remove('hide');
-
-    points = 0;
-    userPoints.innerHTML = points;//points is applied HTML element of userPoints
-
-    startQuiz();// call startQuiz() to start quiz again
-
-}
 // next() function called when nextButton is clicked
 function next() {
-
-    currentQuest.innerHTML = ++currentQ; // currentQuest is assigned the value stored in currentQ
+    if (currentQ == 0) {
+        currentQuest.innerHTML = ++currentQ;
+    } else if (currentQ <= 10) {
+        currentQuest.innerHTML = currentQ++;
+    }// currentQuest is assigned the value stored in currentQ
     trueButton.classList.remove('hide');
     falseButton.classList.remove('hide');
     restartButton.classList.remove('hide');
-
+    console.log(currentQ);
     if (currentQ >= 2) {// on question 2 the previous button hidden attibrute is removed so the user can use the button.
         previousButton.classList.remove('hide');
     }
-
     if (currentQ >= 10) { // ifcurrentQ is greater than or equal to 10 the hidden attribute is removed from finish,previous button and is added to next button
         finishButton.classList.remove('hide');
         nextButton.classList.add('hide');
@@ -175,11 +157,11 @@ function next() {
             }
         }
         userPoints.innerHTML = points;//points is applied HTML element of userPoints
-        if (currentQ <= 10) {//if points less than or =10
+
+        if (currentQ <= 10) {//if current question number less than or =10
             next();// then next function is called
         }
     }
-
     falseButton.onclick = () => {
         let num = 1;
         if (questions[currentQ].answers[num].answer) { //will check to see if the answer selected is correct from the questions array. answer array pointing at index 1 for false
@@ -192,7 +174,6 @@ function next() {
             next();//next function is called
         }
     };
-
 }
 // prev() function called when previousButton is clicked
 function previous() {
@@ -219,7 +200,6 @@ function previous() {
             next();//next function is called
         }
     };
-
     falseButton.onclick = () => {
         let num = 1;
         if (questions[currentQ].answers[num].answer) {
@@ -232,9 +212,22 @@ function previous() {
             next();//next function is called
         }
     };
-
 }
+// Restart function will reset all values back to 0,hidden elements have the hidden attribute removed that need to be hidden and begin the quiz again by calling startQuiz();
+function restart() {
+    currentQ = 0;
+    currentQuest.innerHTML = currentQ;//currentQ is applied HTML element of currentQuest
+    trueButton.classList.remove('hide');
+    falseButton.classList.remove('hide');
+    previousButton.classList.remove('hide');
+    nextButton.classList.remove('hide');
+    finishButton.classList.remove('hide');
 
+    points = 0;
+    userPoints.innerHTML = points;//points is applied HTML element of userPoints
+
+    startQuiz();// call startQuiz() to start quiz again
+}
 function submit() {// submit function called all buttons are aassigned attribute hide. to hide the buttons. restart button still visible
     previousButton.classList.add('hide');
     nextButton.classList.add('hide');
@@ -254,6 +247,5 @@ function submit() {// submit function called all buttons are aassigned attribute
     else if (points < 4 && points >= 0) {
         questionText.innerHTML = `<p>You Scored ${points}/${questions.length - 2}.</p><p> You Should Watch The Movies Again</p>`;
     }
-
 }
 startQuiz();// calls startQuiz() function
